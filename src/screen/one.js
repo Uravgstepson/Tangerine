@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 
 import {movieData} from '../../assets/Datas/MovieData';
+import { ButtonComponent } from '../components/ButtonComponent';
+
 
 const One = () => {
   return (
@@ -30,6 +32,12 @@ const One = () => {
                   <Text style={styles.rating}>{item.rating}</Text>
                 </View>
               </View>
+            <View>
+              <ButtonComponent
+                 onPress={() => 
+                  navigation.navigate('DetailMovie', {item})
+              }/>
+            </View>
             </View>
           );
         }}
