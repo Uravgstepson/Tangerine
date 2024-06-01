@@ -1,20 +1,15 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  FlatList,
-  StyleSheet,
-  Image,
-} from 'react-native';
+import {View, Text, FlatList, StyleSheet, Image} from 'react-native';
 
 import {movieData} from '../../assets/Datas/MovieData';
 
 const One = () => {
+  const sortedMovieData = [...movieData].sort((a, b) => b.rating - a.rating);
+
   return (
     <View style={styles.mainContainer}>
       <FlatList
-        data={movieData}
+        data={sortedMovieData}
         keyExtractor={item => item.id}
         contentContainerStyle={styles.flatListContainer}
         renderItem={({item}) => {
@@ -60,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    padding: 5,
+    marginLeft: 5,
     fontSize: 15,
     fontWeight: 'bold',
   },
@@ -80,6 +75,14 @@ const styles = StyleSheet.create({
   },
   ratings: {
     marginTop: 4,
+  },
+  headerFooterContainer: {
+    padding: 10,
+    alignItems: 'center',
+  },
+  headerFooterText: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 
