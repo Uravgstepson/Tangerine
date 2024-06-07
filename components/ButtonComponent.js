@@ -5,7 +5,7 @@ export const ButtonComponent = props => {
     <View style={styles.mainButtonContainer}>
       <View style={styles.buttonContainer}>
         <TouchableOpacity {...props}>
-          <Text>SEE DETAILS</Text>
+          <Text style={{color: '#373A40'}}>Learn More</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -18,10 +18,11 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 8,
-    borderRadius: 10,
-    borderWidth: 1,
-    alignItems: 'center',
-    padding: 8,
-    backgroundColor: '#cce6cc',
+    borderRadius: 5,
+    borderWidth: 2,
+    padding: 5,
+    backgroundColor: '#EEEEEE',
+    borderColor: '#DC5F00',
   },
+  buttonContainer: {},
 });
