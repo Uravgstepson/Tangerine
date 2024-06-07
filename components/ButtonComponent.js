@@ -24,5 +24,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#EEEEEE',
     borderColor: '#DC5F00',
   },
-  buttonContainer: {},
 });
