@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Image,
 } from 'react-native';
-
 import {movieData} from '../../assets/Datas/MovieData';
 import {ButtonComponent} from '../../components/ButtonComponent';
 
