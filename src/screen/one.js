@@ -2,7 +2,6 @@ import React from 'react';
 import {View, Text, FlatList, StyleSheet, Image} from 'react-native';
 
 import {movieData} from '../../assets/Datas/MovieData';
-import {ButtonComponent} from '../../components/ButtonComponent';
 
 const One = ({navigation}) => {
   const sortedMovieData = [...movieData].sort((a, b) => b.rating - a.rating);
@@ -15,13 +14,17 @@ const One = ({navigation}) => {
         keyExtractor={item => item.id}
         renderItem={({item}) => {
           return (
-            <View
-              style={{
-                margin: 8,
-                backgroundColor: 'lavender',
-                borderWidth: 1,
-              }}>
-              <Text>{item.title}</Text>
+            <View style={styles.dataContainer}>
+              <Image style={styles.movieImage} source={{uri: item.imageLink}} />
+              <View style={styles.Desc}>
+                <Text style={styles.title}>{item.title}</Text>
+                <View style={styles.years}>
+                  <Text style={styles.year}>{item.year}</Text>
+                </View>
+                <View style={styles.ratings}>
+                  <Text style={styles.rating}>{item.rating}</Text>
+                </View>
+              </View>
             </View>
           );
         }}
