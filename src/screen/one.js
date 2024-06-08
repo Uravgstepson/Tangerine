@@ -8,44 +8,24 @@ const One = ({navigation}) => {
   const sortedMovieData = [...movieData].sort((a, b) => b.rating - a.rating);
 
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.Concolor}>
-        <FlatList
-          data={sortedMovieData}
-          keyExtractor={item => item.id}
-          contentContainerStyle={styles.flatListContainer}
-          renderItem={({item}) => {
-            return (
-              <View style={styles.ContainerOut}>
-                <View style={styles.dataContainer}>
-                  <Image
-                    style={styles.movieImage}
-                    source={{uri: item.imageLink}}
-                  />
-                  <View style={styles.Desc}>
-                    <Text style={styles.title}>{item.title}</Text>
-                    <View style={styles.Descrip}>
-                      <View style={styles.years}>
-                        <Text style={styles.year}>{item.year}</Text>
-                      </View>
-                      <View style={styles.ratings}>
-                        <Text style={styles.rating}>{item.rating}</Text>
-                      </View>
-                    </View>
-                  </View>
-                </View>
-                <View style={styles.buton}>
-                  <View>
-                    <ButtonComponent
-                      onPress={() => navigation.navigate('DetailMovie', {item})}
-                    />
-                  </View>
-                </View>
-              </View>
-            );
-          }}
-        />
-      </View>
+    <View>
+      <FlatList
+        contentContainerStyle={{padding: 8}}
+        data={movieData}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => {
+          return (
+            <View
+              style={{
+                margin: 8,
+                backgroundColor: 'lavender',
+                borderWidth: 1,
+              }}>
+              <Text>{item.title}</Text>
+            </View>
+          );
+        }}
+      />
     </View>
   );
 };
