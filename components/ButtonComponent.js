@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 8,
-    borderRadius: 5,
+    borderRadius: 8,
     borderWidth: 2,
     padding: 5,
     backgroundColor: '#EEEEEE',
