@@ -55,14 +55,14 @@ const One = ({navigation}) => {
                   renderItem={({item}) => {
                     return (
                       <View style={styles.ContainerOut}>
-                        <View style={styles.dataContainer}>
+                        <View style={styles.dataContainerheader}>
                           <Image
                             style={styles.movieImage}
                             source={{uri: item.imageLink}}
                           />
                           <View style={styles.Desc}>
                             <Text style={styles.title}>{item.title}</Text>
-                            <View style={styles.Descrip}>
+                            <View style={styles.dedass}>
                               <View style={styles.years}>
                                 <Text style={styles.year}>{item.year}</Text>
                               </View>
@@ -72,7 +72,7 @@ const One = ({navigation}) => {
                             </View>
                           </View>
                         </View>
-                        <View style={styles.buton}>
+                        <View style={styles.butons}>
                           <View>
                             <ButtonComponent
                               onPress={() =>
@@ -116,7 +116,7 @@ const One = ({navigation}) => {
                             </View>
                           </View>
                         </View>
-                        <View style={styles.buton}>
+                        <View style={styles.butons}>
                           <View>
                             <ButtonComponent
                               onPress={() =>
@@ -155,6 +155,11 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  dataContainerheader: {
+    padding: 10,
+    alignItems: 'center',
+    flexDirection: 'column',
   },
   title: {
     padding: 5,
@@ -202,8 +207,16 @@ const styles = StyleSheet.create({
   Descrip: {
     flexDirection: 'row',
   },
+  dedass: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   buton: {
     alignItems: 'flex-end',
+    margin: 4,
+  },
+  butons: {
+    alignItems: 'center',
     margin: 4,
   },
 });
