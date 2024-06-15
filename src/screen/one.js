@@ -6,6 +6,7 @@ import {ButtonComponent} from '../../components/ButtonComponent';
 
 const One = ({navigation}) => {
   const sortedMovieData = [...movieData].sort((a, b) => b.rating - a.rating);
+  const sortedMovieease = [...movieData].sort((a, b) => b.year - a.year);
 
   return (
     <View style={styles.mainContainer}>
@@ -49,7 +50,7 @@ const One = ({navigation}) => {
               <View style={styles.Concolor}>
                 <FlatList
                   horizontal
-                  data={sortedMovieData}
+                  data={sortedMovieease}
                   keyExtractor={item => item.id}
                   contentContainerStyle={styles.flatListContainer}
                   renderItem={({item}) => {
@@ -93,20 +94,20 @@ const One = ({navigation}) => {
               <View style={styles.Concolor}>
                 <FlatList
                   horizontal
-                  data={sortedMovieData}
+                  data={sortedMovieease}
                   keyExtractor={item => item.id}
                   contentContainerStyle={styles.flatListContainer}
                   renderItem={({item}) => {
                     return (
                       <View style={styles.ContainerOut}>
-                        <View style={styles.dataContainer}>
+                        <View style={styles.dataContainerheader}>
                           <Image
                             style={styles.movieImage}
                             source={{uri: item.imageLink}}
                           />
                           <View style={styles.Desc}>
                             <Text style={styles.title}>{item.title}</Text>
-                            <View style={styles.Descrip}>
+                            <View style={styles.dedass}>
                               <View style={styles.years}>
                                 <Text style={styles.year}>{item.year}</Text>
                               </View>
