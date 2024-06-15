@@ -5,7 +5,7 @@ import {ButtonComponent} from '../../components/ButtonComponent';
 
 const One = ({navigation}) => {
   const sortedMovieData = [...movieData].sort((a, b) => b.rating - a.rating);
-  const sortedMovieease = [...movieData].sort((a, b) => b.year - a.year);
+  const Dataheaderfoooter = [...movieData].sort((a, b) => b.year - a.year);
   //new one heres//
 
   return (
@@ -50,7 +50,7 @@ const One = ({navigation}) => {
               <View style={styles.Concolor}>
                 <FlatList
                   horizontal
-                  data={sortedMovieease}
+                  data={Dataheaderfoooter}
                   keyExtractor={item => item.id}
                   contentContainerStyle={styles.flatListContainer}
                   renderItem={({item}) => {
@@ -63,7 +63,7 @@ const One = ({navigation}) => {
                           />
                           <View style={styles.Desc}>
                             <Text style={styles.title}>{item.title}</Text>
-                            <View style={styles.dedass}>
+                            <View style={styles.descripfooterheader}>
                               <View style={styles.years}>
                                 <Text style={styles.year}>{item.year}</Text>
                               </View>
@@ -94,7 +94,7 @@ const One = ({navigation}) => {
               <View style={styles.Concolor}>
                 <FlatList
                   horizontal
-                  data={sortedMovieease}
+                  data={Dataheaderfoooter}
                   keyExtractor={item => item.id}
                   contentContainerStyle={styles.flatListContainer}
                   renderItem={({item}) => {
@@ -107,7 +107,7 @@ const One = ({navigation}) => {
                           />
                           <View style={styles.Desc}>
                             <Text style={styles.title}>{item.title}</Text>
-                            <View style={styles.dedass}>
+                            <View style={styles.descripfooterheader}>
                               <View style={styles.years}>
                                 <Text style={styles.year}>{item.year}</Text>
                               </View>
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
   Descrip: {
     flexDirection: 'row',
   },
-  dedass: {
+  descripfooterheader: {
     flexDirection: 'row',
     alignItems: 'center',
   },
