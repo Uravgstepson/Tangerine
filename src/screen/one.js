@@ -6,6 +6,7 @@ import {ButtonComponent} from '../../components/ButtonComponent';
 const One = ({navigation}) => {
   const sortedMovieData = [...movieData].sort((a, b) => b.rating - a.rating);
   const sortedMovieease = [...movieData].sort((a, b) => b.year - a.year);
+  //new one heres//
 
   return (
     <View style={styles.mainContainer}>
