@@ -15,6 +15,7 @@ const MainNavigator = () => {
             </Stack.Navigator>
         </NavigationContainer>
     );
+    
 };
 
 export default MainNavigator
