@@ -12,6 +12,7 @@ export const ButtonComponent = props => {
   );
 };
 
+
 const styles = StyleSheet.create({
   mainButtonContainer: {
     alignItems: 'baseline',
