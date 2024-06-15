@@ -5,7 +5,7 @@ export const ButtonComponent = props => {
     <View style={styles.mainButtonContainer}>
       <View style={styles.buttonContainer}>
         <TouchableOpacity {...props}>
-          <Text style={{color: '#373A40'}}>Learn More</Text>
+          <Text>SEE DETAILS</Text>
         </TouchableOpacity>
       </View>
     </View>

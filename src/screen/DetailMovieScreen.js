@@ -5,6 +5,7 @@ const DetailMovieScreen = () => {
     return (
         <View>
             <Text>Detail Movie</Text>
+            
         </View>
     )
 }
