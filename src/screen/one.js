@@ -46,46 +46,53 @@ const One = ({navigation}) => {
             );
           }}
           ListHeaderComponent={
-            <View style={styles.mainContainer}>
-              <View style={styles.Concolor}>
-                <FlatList
-                  horizontal
-                  data={Dataheaderfoooter}
-                  keyExtractor={item => item.id}
-                  contentContainerStyle={styles.flatListContainer}
-                  renderItem={({item}) => {
-                    return (
-                      <View style={styles.ContainerOut}>
-                        <View style={styles.dataContainerheader}>
-                          <Image
-                            style={styles.movieImage}
-                            source={{uri: item.imageLink}}
-                          />
-                          <View style={styles.Desc}>
-                            <Text style={styles.title}>{item.title}</Text>
-                            <View style={styles.descripfooterheader}>
-                              <View style={styles.years}>
-                                <Text style={styles.year}>{item.year}</Text>
-                              </View>
-                              <View style={styles.ratings}>
-                                <Text style={styles.rating}>{item.rating}</Text>
+            <View>
+              <View style={styles.Headertitle}>
+                <Text style={styles.uppertext}>Tangerine Film</Text>
+              </View>
+              <View style={styles.mainContainer}>
+                <View style={styles.Concolor}>
+                  <FlatList
+                    horizontal
+                    data={Dataheaderfoooter}
+                    keyExtractor={item => item.id}
+                    contentContainerStyle={styles.flatListContainer}
+                    renderItem={({item}) => {
+                      return (
+                        <View style={styles.ContainerOut}>
+                          <View style={styles.dataContainerheader}>
+                            <Image
+                              style={styles.movieImage}
+                              source={{uri: item.imageLink}}
+                            />
+                            <View style={styles.Desc}>
+                              <Text style={styles.title}>{item.title}</Text>
+                              <View style={styles.descripfooterheader}>
+                                <View style={styles.years}>
+                                  <Text style={styles.year}>{item.year}</Text>
+                                </View>
+                                <View style={styles.ratings}>
+                                  <Text style={styles.rating}>
+                                    {item.rating}
+                                  </Text>
+                                </View>
                               </View>
                             </View>
                           </View>
-                        </View>
-                        <View style={styles.butons}>
-                          <View>
-                            <ButtonComponent
-                              onPress={() =>
-                                navigation.navigate('DetailMovie', {item})
-                              }
-                            />
+                          <View style={styles.butons}>
+                            <View>
+                              <ButtonComponent
+                                onPress={() =>
+                                  navigation.navigate('DetailMovie', {item})
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
-                      </View>
-                    );
-                  }}
-                />
+                      );
+                    }}
+                  />
+                </View>
               </View>
             </View>
           }
@@ -219,6 +226,19 @@ const styles = StyleSheet.create({
   butons: {
     alignItems: 'center',
     margin: 4,
+  },
+  Headertitle: {
+    alignItems: 'center',
+  },
+  uppertext: {
+    color: '#EEEEEE',
+    fontSize: 28,
+    fontWeight: 'bold',
+    backgroundColor: '#DC5F00',
+    paddingHorizontal: 85,
+    paddingVertical: 3,
+    marginTop: 4,
+    borderRadius: 8,
   },
 });
 
