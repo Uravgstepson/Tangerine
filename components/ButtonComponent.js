@@ -18,10 +18,10 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 8,
-    borderRadius: 10,
-    borderWidth: 1,
-    alignItems: 'center',
-    padding: 8,
-    backgroundColor: '#cce6cc',
+    borderRadius: 8,
+    borderWidth: 2,
+    padding: 5,
+    backgroundColor: '#EEEEEE',
+    borderColor: '#DC5F00',
   },
 });
