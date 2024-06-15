@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text, FlatList, StyleSheet, Image} from 'react-native';
-
 import {movieData} from '../../assets/Datas/MovieData';
+import {ButtonComponent} from '../../components/ButtonComponent';
 
 const One = ({navigation}) => {
   const sortedMovieData = [...movieData].sort((a, b) => b.rating - a.rating);
+  const Dataheaderfoooter = [...movieData].sort((a, b) => b.year - a.year);
+  //new one heres//
 
   return (
     <View style={styles.mainContainer}>
@@ -44,11 +46,62 @@ const One = ({navigation}) => {
             );
           }}
           ListHeaderComponent={
+            <View>
+              <View style={styles.Headertitle}>
+                <Text style={styles.uppertext}>Tangerine Film</Text>
+              </View>
+              <View style={styles.mainContainer}>
+                <View style={styles.Concolor}>
+                  <FlatList
+                    horizontal
+                    data={Dataheaderfoooter}
+                    keyExtractor={item => item.id}
+                    contentContainerStyle={styles.flatListContainer}
+                    renderItem={({item}) => {
+                      return (
+                        <View style={styles.ContainerOut}>
+                          <View style={styles.dataContainerheader}>
+                            <Image
+                              style={styles.movieImage}
+                              source={{uri: item.imageLink}}
+                            />
+                            <View style={styles.Desc}>
+                              <Text style={styles.title}>{item.title}</Text>
+                              <View style={styles.descripfooterheader}>
+                                <View style={styles.years}>
+                                  <Text style={styles.year}>{item.year}</Text>
+                                </View>
+                                <View style={styles.ratings}>
+                                  <Text style={styles.rating}>
+                                    {item.rating}
+                                  </Text>
+                                </View>
+                              </View>
+                            </View>
+                          </View>
+                          <View style={styles.butons}>
+                            <View>
+                              <ButtonComponent
+                                onPress={() =>
+                                  navigation.navigate('DetailMovie', {item})
+                                }
+                              />
+                            </View>
+                          </View>
+                        </View>
+                      );
+                    }}
+                  />
+                </View>
+              </View>
+            </View>
+          }
+          ListFooterComponent={
             <View style={styles.mainContainer}>
               <View style={styles.Concolor}>
                 <FlatList
                   horizontal
-                  data={sortedMovieData}
+                  data={Dataheaderfoooter}
                   keyExtractor={item => item.id}
                   contentContainerStyle={styles.flatListContainer}
                   renderItem={({item}) => {
@@ -61,51 +114,7 @@ const One = ({navigation}) => {
                           />
                           <View style={styles.Desc}>
                             <Text style={styles.title}>{item.title}</Text>
-                            <View style={styles.dedass}>
-                              <View style={styles.years}>
-                                <Text style={styles.year}>{item.year}</Text>
-                              </View>
-                              <View style={styles.ratings}>
-                                <Text style={styles.rating}>{item.rating}</Text>
-                              </View>
-                            </View>
-                          </View>
-                        </View>
-                        <View style={styles.butons}>
-                          <View>
-                            <ButtonComponent
-                              onPress={() =>
-                                navigation.navigate('DetailMovie', {item})
-                              }
-                            />
-                          </View>
-                        </View>
-                      </View>
-                    );
-                  }}
-                />
-              </View>
-            </View>
-          }
-          ListFooterComponent={
-            <View style={styles.mainContainer}>
-              <View style={styles.Concolor}>
-                <FlatList
-                  horizontal
-                  data={sortedMovieData}
-                  keyExtractor={item => item.id}
-                  contentContainerStyle={styles.flatListContainer}
-                  renderItem={({item}) => {
-                    return (
-                      <View style={styles.ContainerOut}>
-                        <View style={styles.dataContainer}>
-                          <Image
-                            style={styles.movieImage}
-                            source={{uri: item.imageLink}}
-                          />
-                          <View style={styles.Desc}>
-                            <Text style={styles.title}>{item.title}</Text>
-                            <View style={styles.Descrip}>
+                            <View style={styles.descripfooterheader}>
                               <View style={styles.years}>
                                 <Text style={styles.year}>{item.year}</Text>
                               </View>
@@ -206,7 +215,7 @@ const styles = StyleSheet.create({
   Descrip: {
     flexDirection: 'row',
   },
-  dedass: {
+  descripfooterheader: {
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -217,6 +226,19 @@ const styles = StyleSheet.create({
   butons: {
     alignItems: 'center',
     margin: 4,
+  },
+  Headertitle: {
+    alignItems: 'center',
+  },
+  uppertext: {
+    color: '#EEEEEE',
+    fontSize: 28,
+    fontWeight: 'bold',
+    backgroundColor: '#DC5F00',
+    paddingHorizontal: 85,
+    paddingVertical: 3,
+    marginTop: 4,
+    borderRadius: 8,
   },
 });
 
