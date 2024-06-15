@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, FlatList, StyleSheet, Image} from 'react-native';
 
 import {movieData} from '../../assets/Datas/MovieData';
+import { ButtonComponent } from '../../components/ButtonComponent';
 
 const One = ({navigation}) => {
   const sortedMovieData = [...movieData].sort((a, b) => b.rating - a.rating);
